@@ -1,0 +1,150 @@
+---
+const services = [
+  {
+    icon: '🏠',
+    title: 'End of Lease',
+    description: 'Full home cleaning to help you get your bond back. Eco-friendly products and trained staff.',
+    features: ['Kitchens & bathrooms', 'Vacuuming & mopping', 'Window cleaning', 'Disinfection'],
+    popular: false,
+    btnClass: 'bg-glow hover:opacity-90 focus:ring-blue-300',
+  },
+  {
+    icon: '🏨',
+    title: 'Airbnb Cleaning',
+    description: 'Fast, reliable cleaning for Airbnb and short-term rentals. Always guest-ready.',
+    features: ['Bedrooms & living areas', 'Change linens', 'Bathrooms', 'Surface disinfection'],
+    popular: true,
+    btnClass: 'bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 focus:ring-orange-300',
+  },
+  {
+    icon: '✨',
+    title: 'Deep Cleaning',
+    description: 'Thorough cleaning for moving, seasonal resets, or special occasions.',
+    features: ['Appliances', 'Behind furniture', 'Ceilings & walls', 'Complete disinfection'],
+    popular: false,
+    btnClass: 'bg-glow hover:opacity-90 focus:ring-blue-300',
+  },
+];
+
+const whyUs = [
+  { icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', title: '100% Guaranteed', desc: "If you're not satisfied, we'll come back at no extra cost." },
+  { icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z', title: 'Punctuality', desc: 'We always arrive on time. Your schedule matters to us.' },
+  { icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z', title: 'Eco-Friendly Products', desc: 'We care about your health and the environment.' },
+];
+---
+
+<section id="services" class="py-8 sm:py-16 bg-gradient-to-br from-blue-50 via-white to-green-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Our Cleaning Services</h2>
+      <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+        We offer professional cleaning solutions tailored to your specific needs, backed by our commitment to quality.
+      </p>
+    </div>
+
+    <div class="relative overflow-hidden md:overflow-visible">
+      <div class="mt-4 sm:mt-0 md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map(service => (
+          <div class="relative w-full flex-shrink-0 md:flex-shrink group mb-3 sm:mb-0">
+            {service.popular && (
+              <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                <span class="bg-gradient-to-r from-orange-400 to-red-500 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
+                  Most Popular
+                </span>
+              </div>
+            )}
+            <div class={`bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 p-8 h-full border-2 ${service.popular ? 'border-orange-200' : 'border-transparent hover:border-blue-200'}`}>
+              <div class="text-center mb-6">
+                <div class="text-5xl mb-4">{service.icon}</div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">{service.title}</h3>
+                <p class="text-gray-600 leading-relaxed">{service.description}</p>
+              </div>
+              <div class="mb-8">
+                <h4 class="font-semibold text-gray-900 mb-4 flex items-center">
+                  <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  Include:
+                </h4>
+                <ul class="space-y-2">
+                  {service.features.map(f => (
+                    <li class="flex items-center text-gray-600">
+                      <svg class="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div class="mt-auto">
+                <button
+                  class={`quote-btn w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-opacity-50 text-white shadow-lg ${service.btnClass}`}
+                  data-service-title={service.title}
+                >
+                  Get Free Quote
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Why Choose Us -->
+    <div class="mt-8 sm:mt-20">
+      <div class="bg-white rounded-3xl sm:shadow-xl p-1 sm:p-8 md:p-12">
+        <div class="text-center mb-10">
+          <h3 class="text-3xl font-bold text-gray-900 mb-4">Why Choose Us?</h3>
+          <p class="text-xl text-gray-600">Committed to excellence in every service</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {whyUs.map(item => (
+            <div class="text-center group">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-glow rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={item.icon}/>
+                </svg>
+              </div>
+              <h4 class="text-xl font-semibold text-gray-900 mb-2">{item.title}</h4>
+              <p class="text-gray-600">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-16">
+      <div class="bg-glow rounded-2xl p-8 text-white">
+        <h3 class="text-2xl font-bold mb-4">Ready for a Spotless Space?</h3>
+        <p class="text-lg mb-6 opacity-90">Contact us today and get a free quote in less than 24 hours</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+61434769707" class="bg-white text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 transform hover:scale-105">
+            Call Now
+          </a>
+          <a href="#" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105">
+            Get a Quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.quote-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const map: Record<string, string> = {
+        'End of Lease': 'end-of-lease',
+        'Airbnb Cleaning': 'airbnb-cleaning',
+        'Deep Cleaning': 'deep-cleaning',
+      };
+      const select = document.querySelector<HTMLSelectElement>('#service');
+      const val = map[btn.dataset.serviceTitle ?? ''];
+      if (select && val) select.value = val;
+      document.getElementById('cleaningForm')?.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>

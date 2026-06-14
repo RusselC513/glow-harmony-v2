@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+
+<Layout title="Thank you! | Glow & Harmony">
+  <Header />
+
+  <section class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 flex items-center justify-center">
+    <div class="text-center max-w-lg mx-auto px-4">
+      <div class="bg-white rounded-2xl shadow-2xl p-10">
+        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg class="w-10 h-10 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+        </div>
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">Thank you!</h1>
+        <p class="text-lg text-gray-600 mb-8">
+          We've received your request and will be in touch shortly with your free quote.
+        </p>
+        <a href="/" class="inline-block bg-glow text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105">
+          Back to Home
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

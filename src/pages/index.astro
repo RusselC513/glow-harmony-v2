@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import HeroCarousel from '../components/HeroCarousel.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import Services from '../components/Services.astro';
+import Reviews from '../components/Reviews.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Header />
+
+  <section
+    class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 flex items-center relative overflow-hidden py-4 sm:py-0"
+    style="background-image: url('/glow-harmony-bg.webp'); background-size: cover; background-position: center center; background-repeat: no-repeat;"
+  >
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-10 w-64 h-64 bg-green-400 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 right-10 w-80 h-80 bg-green-400 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-green-300 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+      <div class="grid lg:grid-cols-2 gap-4 sm:gap-12 lg:gap-16 items-center">
+        <HeroCarousel />
+        <div class="lg:justify-self-end w-full max-w-lg">
+          <QuoteForm />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Services />
+  <Reviews />
+  <Footer />
+</Layout>

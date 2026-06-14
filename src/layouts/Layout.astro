@@ -1,0 +1,76 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Glow & Harmony',
+  description = 'Cleaning, Glow and Harmony in Hobart: professional cleaning services for your home and office. Quality, shine, and harmony in every job.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="apple-mobile-web-app-title" content="Glow & Harmony" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Glow and Harmony",
+        "url": "https://glowandharmony.com.au",
+        "logo": "https://glowandharmony.com.au/apple-touch-icon.png"
+      }
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17299437177"></script>
+    <script type="module">
+      (function (e, n, r, t, s) {
+        e[t] = e[t] || [];
+        e[t].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var g = n.getElementsByTagName(r)[0],
+          a = n.createElement(r),
+          m = '';
+        a.async = true;
+        a.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-WGWN5NZM' + m;
+        g.parentNode.insertBefore(a, g);
+      })(window, document, 'script', 'dataLayer');
+    </script>
+    <script type="module">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'AW-17299437177');
+    </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-WGWN5NZM"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
+    <slot />
+  </body>
+</html>

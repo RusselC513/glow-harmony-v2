@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://glowandharmony.com.au/sitemap.xml
