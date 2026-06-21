@@ -124,7 +124,7 @@ const whyUs = [
           <a href="tel:+61434769707" class="bg-white text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 transform hover:scale-105">
             Call Now
           </a>
-          <a href="#" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105">
+          <a href="#quote_form" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105">
             Get a Quote
           </a>
         </div>
@@ -144,7 +144,7 @@ const whyUs = [
       const select = document.querySelector<HTMLSelectElement>('#service');
       const val = map[btn.dataset.serviceTitle ?? ''];
       if (select && val) select.value = val;
-      document.getElementById('cleaningForm')?.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('quote_form')?.scrollIntoView({ behavior: 'smooth' });
     });
   });
 </script>

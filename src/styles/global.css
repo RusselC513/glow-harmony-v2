@@ -47,3 +47,50 @@
 button:hover {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
+.reveal-box {
+  width: 420px;
+  height: 520px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 16px;
+}
+
+.reveal-box__inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* imágenes apiladas */
+.reveal-box__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  opacity: 0;
+  transform: scale(1.05);
+  transition: all 1.2s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* activa imagen */
+.reveal-box__image.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* animación general del contenedor */
+.reveal-box.enter .reveal-box__image.active {
+  transform: scale(1);
+}
+
+.reveal-box.leave .reveal-box__image.active {
+  transform: scale(1.08);
+  filter: blur(1px);
+}
+
+/* scroll smooth */
+html {
+  scroll-behavior: smooth;
+}

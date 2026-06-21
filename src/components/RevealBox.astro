@@ -1,0 +1,29 @@
+<div class="reveal-box" id="revealBox">
+  <div class="reveal-box__inner">
+    <img class="reveal-box__image " src="/mun_1.png" />
+    <img class="reveal-box__image " src="/mi__2__.webp" /> 
+    <img class="reveal-box__image active" src="/mi_3__.webp" /> 
+    <img class="reveal-box__image" src="/mi_4_.webp" /> 
+    <!-- <img class="reveal-box__image" src="/glow_and_harmony_image_1.png" /> --> 
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const box = document.querySelector("#revealBox");
+    if (!box) return;
+
+    const images = box.querySelectorAll(".reveal-box__image");
+    let index = 0;
+
+    function nextImage() {
+      images[index].classList.remove("active");
+
+      index = (index + 1) % images.length;
+
+      images[index].classList.add("active");
+    }
+
+    setInterval(nextImage, 3000);
+  });
+</script>

@@ -1,4 +1,4 @@
----
+<!-- ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import HeroCarousel from '../components/HeroCarousel.astro';
@@ -13,7 +13,7 @@ import Footer from '../components/Footer.astro';
 
   <section
     class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 flex items-center relative overflow-hidden py-4 sm:py-0"
-    style="background-image: url('/glow-harmony-bg.webp'); background-size: cover; background-position: center center; background-repeat: no-repeat;"
+    style="background-image: url('/glow_and_harmony_image_1.png'); background-size: cover; background-position: center center; background-repeat: no-repeat;"
   >
     <div class="absolute inset-0 opacity-10">
       <div class="absolute top-20 left-10 w-64 h-64 bg-green-400 rounded-full blur-3xl"></div>
@@ -28,6 +28,46 @@ import Footer from '../components/Footer.astro';
           <QuoteForm />
         </div>
       </div>
+    </div>
+  </section>
+
+  <Services />
+  <Reviews />
+  <Footer />
+</Layout> -->
+
+
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import HeroCarousel from '../components/HeroCarousel.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import Services from '../components/Services.astro';
+import Reviews from '../components/Reviews.astro';
+import Footer from '../components/Footer.astro';
+import RevealBox from "../components/RevealBox.astro";
+---
+<Layout>
+  <Header />
+
+  <section class="min-h-screen bg-[hsl(162,25%,10%)] flex items-center relative overflow-hidden py-4 sm:py-0">
+  
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <HeroCarousel />
+          <div class="w-full flex justify-center">
+            <RevealBox />
+          </div>
+      </div>
+    
+    </div>
+  </section>
+
+  <section id="quote_form" class="bg-white py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <QuoteForm />
     </div>
   </section>
 
